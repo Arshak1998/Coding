@@ -1,0 +1,521 @@
+apach polni sarqel stugel imanal
+
+php mtnel xoracac
+
+
+
+
+
+
+
+
+
+
+
+
+
+/ karnevo mtnel miangamic 
+
+				mtnel asus
+
+cd home/asus
+
+
+		durs gal asusis gnal urish tex
+		
+	hraman grel@   	ampayman cd-ov	
+	
+	het gnal@ hatik hatik ../ ../ ../
+	
+cd ../     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+--										SQL    Structured Query Language 
+--										Կառուցվածքային հարցման լեզու
+
+
+
+--ՏԵՐՄԻՆՆԵՐ 		ԱՆԳԼԵՐԵՆ 		ՀԱՅԵՐԵՆ 
+--					Customers		ՀԱՃԱԽՈՐԴ
+--					Orders			ՊԱՏՎԵՐ					
+--					status			ԿԱՐԳԱՎԻՃԱԿ
+--					Delivered		ԱՌԱՔՎԵԼ Է									
+--					Pending			ՍՊԱՍՎՈՒՄ Է
+--					Amount			ԳՈՒՄԱՐ
+					Relation		ԿԱՊ
+					Permission		ԹՈՒՅԼԱՏՎՈՒԹՅՈՒՆ	
+								 
+									
+									------Оператор SELECT в SQL-----    ԸՆՏՐԵԼ
+
+--
+--SELECT FirstName, LastName FROM Employee;
+--SELECT * FROM Employee;
+--SELECT * FROM Employee WHERE LastName = 'Park';
+--SELECT LastName, FirstName FROM Employee WHERE LastName = 'Park'
+--SELECT * FROM Employee WHERE FirstName = 'Jane' 
+
+
+								-------Операторы AND, OR и NOT в SQL------- և  ԿԱՄ ՉԻ ՕՊԵՐԱՏՈՐՆԵՐ
+
+
+--SELECT * FROM Employee WHERE FirstName = 'Jane' AND LastName = 'Peacock';
+--SELECT FirstName, LastName FROM Employee WHERE City = 'Edmonton' AND LastName = 'Adams';
+--SELECT LastName, FirstName FROM Employee WHERE  LastName = 'Adams' OR  City = 'Lethbridge';
+--SELECT FirstName, LastName FROM Employee WHERE NOT City  = 'Lethbridge';
+--SELECT * FROM Employee WHERE(City = 'Lethbridge' OR LastName = 'Adams' AND Country = 'Canada');
+--SELECT * FROM Employee  WHERE NOT City = 'Edmonton' AND NOT LastName = 'King';
+
+
+									------SELECT DISTINCT в SQL------ ՀԱՍՏԱՏՈՒՆ ԱՐԺԵՔ
+--SELECT * FROM Employee;
+
+--SELECT DISTINCT Country FROM Employee; 
+--SELECT DISTINCT City,FirstName FROM Employee;
+--SELECT COUNT(DISTINCT City) FROM Employee;  
+--SELECT City, FirstName FROM Employee;
+
+
+
+								------Псевдонимы (оператор AS) в SQL------ԱՎԵԼԱՑՆԵԼ ԿԵՂԾԱՆՈՒՆ
+
+--SELECT * FirstName AS Name FROM Employee;  .......__
+--SELECT Customer_id AS cid, Last_name AS name  FROM Employee;   ....__
+--SELECT CONCAT(FirstName, '', LastName) AS FullName FROM Employee; ...___   macnuma anun azganun@ FullName-cankum arsh stepanyan
+
+ 
+
+
+								--------LIMIT, TOP и FETCH FIRST в SQL------ ՍԱՀՄԱՆ
+ 
+
+--SELECT FirstName, LastName FROM Employee LIMIT 2;
+--SELECT * FROM Employee LIMIT 2;
+--SELECT FirstName, LastName FROM Employee LIMIT 1 OFFSET 7;     nshuma anvan azganvan 1 arjeq@ chhashvac skzbi7 tox@
+
+									-------Оператор IN в SQL------- ԱՐԺԵՔՆԵՐԻ ՄԵՋ
+
+
+--SELECT FirstName, City FROM Employee WHERE City IN ('Edmonton', 'Lethbridge'); nshuma anun@ u qaxaq@ vortex qaxaqi mej (IN) kan (mejinner@)
+--SELECT FirstName, City FROM Employee WHERE "Calgary" IN (City);   nshuma anun qaxaq@ papkic, vortex 'Calgary' MEJNA-IN (City)-i
+--SELECT FirstName, City FROM Employee WHERE City NOT IN ('Lethbridge', 'Calgary');    nshel anun qaxaq vortex es qaxaq@ chka cankum 
+--SELECT FirstName, City FROM Employee WHERE City IN ('Lethbridge', 'Edmonton'); nshel enq qaxaqner@ vor@ uzum enq cuyc ta
+--SELECT EmployeeId, FirstName FROM Employee WHERE EmployeeId IN(SELECT CustomerId FROM Customer)
+
+								-------Оператор BETWEEN в SQL-------- ԱՐԺԵՔՆԵՐԻ ՄԻՋև
+
+
+--SELECT mard, ashxatavarc FROM Employee WHERE ashxatavarc BETWEEN 300 AND 500; cuyca talis anun@ u 300-500 mijakayq hngac ashx@
+--SELECT mard, ashxatavarc FROM Employee WHERE ashxatavarc NOT BETWEEN 300 AND 500; cuyca talis baci es mijakayqic bolori ashxer@
+
+								-------Работа с NULL-значениями в SQL--------- ԴԱՏԱՐԿ ԱՐԺԵՔ
+
+--SELECT * FROM Employee WHERE email IS NULL; cuyca talis en toxer@ vortex chka nshvac email hascen
+--SELECT * FROM Employee WHERE email IS NOT NULL; cuyca talis en mardkanc vortex unen email hasce
+--SELECT COUNT(*) FROM Employee WHERE email IS NULL;  cuyca talis qanak@ te qani hogi chuni email ;
+
+
+							-----Функции MAX() и MIN() в SQL------   ԱՄԵՆԱՄԵԾՒ ԱՄԵՆԱՓՈՔՐԸ
+
+--SELECT MAX(age) FROM Employee; cuyca talis um tariqna amenabarcr@ menak tiv@
+--SELECT MIN(age) FROM Employee; cuyca talis um tariqna amenacacr@ menak tiv@
+--SELECT MAX(age) AS max_age FROM Employee; cuyca talis amenatariqovi tiv@ kexcanvan mej (max_age)
+--SELECT MIN(FirstName) AS min_first_name FROM Employee; cuyca talis aybenakanov amenaskzbi tarov sksvox mardu anun@
+--SELECT * FROM Employee  WHERE age = ( SELECT MIN(age) FROM Employee);  cuyca talis podzaprosov  ameneritasard mardu toxer@ 
+
+
+							-----Функция COUNT() в SQL-------ՀԱՇՎՈՒՄԱ ԱՐԺԵՔՆԵՐԸ
+
+--SELECT COUNT(*) FROM Employee; cuyca talis toxeri qanak@ 5;
+--SELECT COUNT(*) AS taza_cank FROM Employee  cuyca talis toxeri qanak@ kexcanvan mej 5;
+--SELECT COUNT(City) AS tabli_qaxaqner@ FROM Employee WHERE City = 'UK';  hashvuma tvyal qaxaqi qanak@ u qcuma kexcanvan mej
+--SELECT COUNT(DISTINCT City) FROM Employee; hashvuma tvyal tabli konkret qani tesaki qaxaq ka 
+--SELECT City, COUNT(*) AS qaxaqner FROM Employee GROUP BY City; hashvuma te amen qaxaqi qani hat ka u qcuma kexcanvan mej
+
+							-----Функции SUM() и AVG() в SQL-------- ԳՈՒՄԱՐԵԼ և ՄԻՋԻՆԸ
+
+--SELECT SUM(Gin) AS gumar@_celi
+ FROM Employee; hashvuma gumari opshi tiv@ u gruma kexcanvan mej
+--SELECT SUM(Gin) AS gin@_ira_tvov FROM Employee  WHERE EmployeeId = 4;  hashvuma tvyal tvi te inchqan et tvi tak arjeq ka dra gumar@ 300 + 400 = 700
+--SELECT AVG(age) AS mijin@_age FROM Employee; hashvuma bolori tariqi gumarayin mijin@ texadrelov kexcanvan mej 25.6
+--SELECT DISTINCT EmployeId, AVG(Gin) AS Gni_Syunak FROM Employee GROUP BY Customer_id(tveri cank@ 1 2 3)   cuyca talis id = 1 = 400... ete 2x 4 ka 300 400 dranc mijin@ 4.350 
+
+
+							-----Оператор ORDER BY в SQL----- ՊԱՏՎԻՐԵԼ ԸՍՏ ...
+
+--SELECT * FROM Employee ORDER BY FirstName;   dasavoruma anunner@ aybenakanov abcic sksac
+--SELECT * FROM Employee ORDER BY age ASC; dasavoruma @st tariqayini skzbic amenapoqr@
+--SELECT * FROM Employee ORDER BY age DESC; dasavoruma @st tariqayini amenatarecic poqr
+
+--SELECT LastName, age 
+FROM Employee 
+WHERE NOT City = 'UK' 
+ORDER BY LastName DESC;
+ cuyca talis achman kargov tariq@, u ov UK qaxaq chi , mnacacin sqn
+
+ 						------Оператор GROUP BY в SQL--------- ԽՈՒՄԲԸ ԸՍՏ ...
+
+--SELECT City, COUNT(*)AS qanak_qaxaqneri FROM Employee  GROUP BY City; cuyca talis kexcanvan mej erkir@ u qanak@;
+--SELECT customer_id, SUM(gin) AS gni_cank FROM Employee GROUP BY customer_id; @st id cuyca talis ira gin@(gni gumar@)
+--SELECT Employee.EmployeeId, Employee.FirstName, Count(Customer.CustomerId) AS taza_cank_orderi 
+--FROM Employee LEFT JOIN Customer ON Employee.EmployeeId = Customer.CustomerId GROUP BY Employee.EmployeeId;   DJVAR ER IROQ 
+ 
+  
+----------------------------------------------------------------------------------------------------
+--SELECT * FROM Employee;
+
+                       --------Операторы LIKE и NOT LIKE в SQL-------- ՆՄԱՆ և ՈՉ ՆՄԱՆ 
+
+--SELECT * FROM Employee  WHERE City LIKE 'Calgary';   vercnuma tox@ vortexi qaxaq@ city 'Calgary', sranic ka
+--SELECT * FROM Employee WHERE FirstName LIKE 'N%';    gtnuma en tox@ vortex anun@ sksuma N tarov;
+--SELECT * FROM Employee WHERE City LIKE 'U_';     gtnuma en qaxaqy u beruma tox@ polni vortex erkir@ sksuma U tarov xosqi UK
+--SELECT * FROM Employee WHERE City NOT LIKE 'Calgary';    gtnuma en toxer@ vortex chka qaxaq 'Calgary';
+--SELECT * FROM Employee WHERE FirstName LIKE 'N%y' OR LastName LIKE 'E%s';  gtnuma en anun azganunner@ vortex sksvum verjanum en en tarerov
+
+
+
+					--------Оператор UNION в SQL--------- ՄԻԱՑՈՒՄ 
+
+
+
+--SELECT age FROM Teachers UNION SELECT age FROM Students;    filtruma qchic shat age papki mej 23 30 32 42 43
+--Teachers  32 43 43 30     Students 23 42 32 23
+
+--SELECT age FROM Teachers UNION ALL SELECT age FROM Students; sarquma darcnuma mi cank age anunov 32 43 43 30 23 42 32 23
+
+
+
+									------Подзапросы в SQL-----
+
+
+
+--SELECT * FROM Employee WHERE ReportsTo = (SELECT MIN(ReportsTo) FROM Employee ); stex takic kataruma podzapros@ taki harc@ vercnuma tver@(tariq@) u tpuma verevi zaprosi mijin@ 22 22
+
+--
+--SELECT customer_id, FirstName  FROM Employee WHERE customer_id IN (SELECT customer_id FROMM Orders);   chjoki vonca ashxatum......-------
+--
+                       
+						
+					----ANY и ALL в SQL------ ՑԱՆԿԱՑԱԾ և ԲՈԼՈՐԸ
+
+--SELECT * FROM Teachers WHERE age ANY(SELECT age FROM Students);  age Peter 32   age Joe 32 gtnuma erkusi mejic nuyn tariq@ gruma techerini cank@ 
+--SELECT * FROM Teachers WHERE age > ALL(SELECT age FROM Students); age 43 gtnuma usucchi amenameci tariq@ usanoxi het hamematac 
+
+
+						-----CASE---- ԻՐԱՎԻՃԱԿ -----
+
+--SELECT EmployeeId, FirstName, CASE WHEN age >= 18 THEN 'Allowed' END AS tuylatreli FROM Employee; gruma cank id-n anun@ kexcanun@ um tariq@ 18=+ -a gruma 'Allowed' u qcuma kexcanvan mej  
+--SELECT EmployeeId, CustomerId, CASE WHEN arjeq >= 400 THEN (arjeq - arjeq * 10/100) END AS zexchvac_gin FROM Employee; uremn hashvuma tvyal 400-in = kam barcr arjeqovneri 10%@ hanuma u taza arjeq gruma kexcanvan mej
+
+
+--11
+
+--SELECT EmployeeId, FirstName, CASE 
+--	WHEN Country = 'USA' THEN 'United States of America' 
+--	WHEN country = 'UK' THEN 'United Kingdom' END AS anun@_bac
+--FROM Customers;   cuyca talis id@-n anun@ kexcanun@ u USA-n gracner@ bacuma rashifrovken
+
+--11
+
+--122
+--SELECT customer_id, first_name,
+--CASE
+--    WHEN country = 'USA' THEN 'United States of America'
+--    WHEN country = 'UK' THEN 'United Kingdom'
+--    ELSE 'Unknown Country'       ete chuni nshvac erkri bac tarberak@ gruka ELSE-i tarberak@
+--END AS country_name
+--FROM Customers;
+--122
+
+								----HAVING--- ՈՒՆԵՑՈՂ- ՈՐԸ ՈՒՆԻ
+
+--SELECT COUNT(customer_id), country
+--FROM Customers
+--GROUP BY country
+--HAVING COUNT(customer_id) > 1;  hanuma u hashvuma te vor erkric qani hat ka 1+ic avel 2 USA 2 UK
+
+
+--SELECT customer_id, amount
+--FROM Orders
+--WHERE amount < 500;   cuyca talis id-n ev gin@ Order-ic vortex gin@ < 500;  poqr e 500-ic
+
+ 
+--SELECT customer_id, SUM(amount) AS total
+--FROM Orders
+--GROUP BY customer_id
+--HAVING SUM(amount) < 500;     ogtagorcum en HAVING funkcian tesnelu te cust_id-n ira total kexcanunov umna aveli qich gin@
+
+
+								----EXISTS---- ՈՐՏԵՂ ԿԱ ԳՈՅՈՒԹՅՈՒՆ ՈՒՆԻ----
+
+--SELECT customer_id, first_name
+--FROM Customers
+--WHERE EXISTS (
+--  SELECT order_id
+--  FROM Orders
+--  WHERE Orders.customer_id = Customers.customer_id
+--);   uremn mec algoritma vortex ka podzapros u takic nayuma cus_id-n order tabli  u cus_id-n customeri u taza artacuma  (customer_id, first_name)  sa
+
+
+
+--SELECT customer_id, first_name
+--FROM Customers
+--WHERE NOT EXISTS (
+--  SELECT order_id
+--  FROM Orders
+--  WHERE Orders.customer_id = Customers.customer_id
+--);   uremn stex nayuma verevini hakarak@ ete cus_id-n orderi chi brnum cus_id-n customeri artacuma menak eti cust_id = 5 firstName = Betty
+
+
+
+--SELECT *
+--FROM Orders
+--WHERE EXISTS (
+--  SELECT customer_id
+--  FROM Customers
+--  WHERE Orders.customer_id = Customers.customer_id
+--  AND Customers.age > 23
+--);   uremn algoritma erku table-neri mej vortex hamematuma cus_id-ner@ ev nayuma  tariq@ age-n ete 23 avela artacuma
+-- celi toxer@  cus_id = 1, 4, 4, es toxer@ kayin erku cus_idneri mej u mecen 23ic,   5 chkar 
+
+
+
+										---JOINNN--- ՄԻԱՑՈՒՄ 
+
+
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--JOIN Orders
+--ON Customers.customer_id = Orders.customer; 
+--uremn mana galis cus_id-i tvin hamapatasxan orders_customer-i tvin u tpuma cus_id-n name@ ampunt@ u miavoruma bolor@ mi syunaki mej 
+--esi INNER JOIN er noyn JOINNA, nerqin miacum 
+
+
+
+--SELECT C.customer_id AS cid, C.first_name AS name, O.amount
+--FROM Customers AS C
+--JOIN Orders AS O
+--ON C.customer_id = O.customer;
+--uremn  miavoruma 2 table-neri miji pahanjner@ u kexcanunov sarquma 	cid-i mej cus_id-n name=FirstName , orders_amount
+
+
+
+						----INNER JOIN----   ՆԵՐՔԻՆ ՄԻԱՑՈՒՄ
+
+
+--Синтаксис оператора INNER JOIN следующий: 
+--
+--SELECT столбцы
+--FROM таблица1
+--INNER JOIN таблица2
+--ON таблица1.имя_столбца = таблица2.имя_столбца;
+
+
+--
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--INNER JOIN Orders
+--ON Customers.customer_id = Orders.customer
+--WHERE Orders.amount >= 500;
+--uremn stex nayuma u miavoruma en toxer@ vor@ hamapatasxanuma paymanin u > kam = 500-in;
+
+
+--SELECT C.cat_name, P.prod_title
+--FROM Categories AS C
+--INNER JOIN Products AS P
+--ON C.cat_id = P.cat_id;
+--uremn stex hamematuma C.cat_id piti hamnkni P.cat_id vor hamnkav macnuma prod_title-in u darcnuma cank cat_name-prod_title
+
+
+--SELECT C.customer_id, C.first_name, O.amount, S.status
+--FROM Customers AS C
+--INNER JOIN Orders AS O
+--ON C.customer_id = O.customer
+--INNER JOIN Shippings AS S
+--ON C.customer_id = S.customer;
+--uremn mec algroritma vortex artacuma selecti mijin@ u hamematuma id_ner@ stacvuma 2 tox es tarberaki mej 500, 800;
+
+
+
+								-------Оператор LEFT JOIN в SQL------   ՄԻԱՑՈՒՄ ԴԵՊԻ ՁԱԽ
+
+
+
+
+
+
+--Синтаксис оператора LEFT JOIN следующий:
+--
+--SELECT столбцы
+--FROM таблица1
+--LEFT JOIN таблица2
+--ON таблица1.имя_столбца = таблица2.имя_столбца;
+
+
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--LEFT JOIN Orders
+--ON Customers.customer_id = Orders.customer;
+--uremn kod@ nayuma princip@ dzaxi ena vor artaceluc heto cuyca talis cus_id polni firstname polni, amount-@ en arjeqner@ um hamar payman@ bavararum er
+
+
+
+ 
+--SELECT Customers.customers_id, Customers.FirstName, Orders.amount 
+--FROM Customers 
+--LEFT JOIN Orders
+--ON Customers.Customer_id = Orders_customer 
+--WHERE Orders.amount >= 500;
+--uremn ashxatuma arden WHERE operator@ u kardalov payman@ anuma left join gorcoxutyun@ bayc artacuma menak en arjeqnerov tox@
+--vortex > kam = 500 miayn vochte bolor toxer@ , es depqum 2 toxa artacum
+
+
+
+--SELECT C.cat_name, P.prod_title
+--FROM Categories AS C
+--LEFT JOIN Products AS P
+--ON C.cat_id = P.cat_id;
+--uremn stugelov paymannerum nshvac id_ner@ categories tabli vra avelacnuma 
+--(selecti, ev product table-i)hamapatasxan titl-ner@ krknvelu depqum id_ner@ avelanuma name-i mej
+
+
+
+							---------Оператор RIGHT JOIN в SQL--------ՄԻԱՑՈՒՄ ԴԵՊԻ ԱՋ
+
+
+
+
+--SELECT столбцы
+--FROM таблица1
+--RIGHT JOIN таблица2
+--ON таблица1.имя_столбца = таблица2.имя_столбца;
+
+
+
+
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--RIGHT JOIN Orders
+--ON Customers.customer_id = Orders.customer;
+--uremn nuyn gorcoxutyunna vonc dzaxi jamanaka bayc stex orderin kpcneluc skzbic linuma paymani bavararum@
+--vori id-n hamapatasxanec gruma cus_id -n firstname-@ u  amount@ galisa lriv aj gruma dranc gner@ u skzbic et idnerin@ heto nor bolor mnacac@ skzbic sksac 
+
+
+--SELECT Customers.customer_id, Customers.FistName, Orders.amount 
+--FROM Customers RIGHT JOIN Orders ON Customers.customer_id = Orders.customer
+--WHERE Orders.amount >= 500;
+--uremn stex karduma payman@ vori id-n bavararuma myus tabli id-iin havaquma aji Ordersi vra
+--customer_id, cust_frstname, u orders.amount syunaknerov hamapatasxan idner@ iranc amountnerov u heto nor
+--mnacac bolor amountnerov
+
+
+
+--SELECT C.cat_name, P.prod_title
+--FROM Categories AS C
+--RIGHT JOIN Products AS P
+--ON C.cat_id = P.cat_id;
+--uremn stex nuyn gorcoxutyunna vonc leftna bayc idner@ hamemateluc u havaqeluc aj mas
+--havaquma C.cat_name, dzaxic vercraci, ev P.prod_title ajic vercraci mej
+
+
+					-----Оператор FULL OUTER JOIN в SQL------ՕՊՇԻ ԱՐՏԱՔԻՆ ՄԻԱՑՈՒՄ
+
+
+
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--FULL OUTER JOIN Orders
+--ON Customers.customer_id = Orders.customer;
+--uremn es operator@ syuner@ selectum nshvac kpcnuma irar bac toxelov tvyal dashter@ vortex selectic gone mek@ chka bayc artacuma bolor parametrer@
+
+
+
+--SELECT Customers.customer_id, Customers.first_name, Orders.amount
+--FROM Customers
+--FULL OUTER JOIN Orders
+--ON Customers.customer_id = Orders.customer
+--WHERE Orders.amount >= 500;
+--stex arden miacnuma irar selecti mijinner@ taza cankerum ogtagorcelov paymani miji bavarar linel@
+
+
+
+--SELECT C.cat_name, P.prod_title
+--FROM Categories AS C
+--FULL OUTER JOIN Products AS P
+--ON C.cat_id = P.cat_id;
+--uremn stex miacnuma gruma  bolor syuner@ selecti miji ev tekuz vandak bac toxelu artacuma id-nerov hamapatasxanox name_@ u titl-@
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-- SELECT Employee.FirstName AS tun, Genre.Name
+-- FROM Employee FULL OUTER JOIN Genre 
+-- ON Employee.EmployeeId = Genre.GenreId
+-- esi normal ashxatec inq@ irar koxqa havaqum erku namener@
+
+
+
+--SELECT CONCAT(Employee.FirstName, ' ', Genre.Name) AS FullName FROM Employee JOIN Genre ON Employee.EmployeeId  = Genre.GenreId; 
+--chisht ashxatuma princip@ toshnia inq@ pyusa + anum anunner@ mi toxi mej
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+--SELECT  LastName AS tun FROM Employee ;                            as
+--SELECT * FROM Employee WHERE FirstName = 'Jane' OR LastName = 'Park';      			 OR 	
+--SELECT * FROM Employee WHERE FirstName = 'Margaret' AND LastName = 'Park'  			 AND
+--SELECT * FROM Employee  WHERE NOT FirstName = 'Jane';  								 NOT
+--SELECT DISTINCT City FROM Employee; 				    							     DISTINCT	
+--SELECT FirstName, LastName FROM Employee LIMIT 2 OFFSET 5;            				 LIMIT	
+--SELECT FirstName, City FROM Employee WHERE City IN ('Edmonton', 'Lethbridge');		 IN						
+
+
+
+
+
+
+
+
+
+
+
+
+
