@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-gitttttt
-=======
-github
->>>>>>> origin/main
+PHP koder

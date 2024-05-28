@@ -8,7 +8,8 @@
  									 
 (sudo) reboot	 перезагрузка система 	
 reboot -p 	 reboot -p или reboot --poweroff — завершает работу системы и выключает питание (аналогично команде poweroff).
- 		
+setxkbmap us    Язык ввода на англиском вручную
+setxkbmap ru    Язык ввода на русском вручную 
  					
  					
  									 
