@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 gitttttt
+=======
+github
+>>>>>>> origin/main
