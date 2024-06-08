@@ -1,12 +1,10 @@
  GitHub, Bitbucket,  GitLab. Arshak Stepanyan  
- sranq chgitem         tag   diff  remote   stash   rebase   fetch   merge   checkout     branch  	SRANQ CHGITEM GITTT
+      	SRANQ CHGITEM GITTT    				 tag      remote 
   					
- 
- ֆայլ սարքելը touch name_file
- ֆայլ ջնջելը պրյամո rm    
- պապկա սարքելը պրյամո 		 mkdir
- պապկա ջնջելը պրյամո		 rm -r       sudo rm -r   
-  ---->
+  chenger փոփոխություներ	 				
+  commit  պարտավորվել				
+  					
+    
 
 git pages      deploy 
 
@@ -105,6 +103,37 @@ git pull: Получение изменений из удаленного реп
 և կարող ենք նայել ամեն դեպքում ֆայլի պարունակությունը հետևյալ կամանդայով  nano github.txt
 
 -------------------------------------------------------------------------------------------
+
+
+git diff file-i anun ----   cuyca talis fayli local changer@ sqn toxi popoxutyunner@
+git branch            ---- cuyca talis local brencher@  (* main) cyux 
+git checkout -b name_branch  ---   sarquma taza branch (cyux)
+git branch -D Arshh  ---  branch@ jnjel@ 
+git checkout name_branch  --- texapoxvum enq myus branchi vra 
+git push origin main ---  pusha anum (main) branchi vra 
+git push  ---- pusha anum tvyal  brenchi vra vortex mtaca
+git commit -m "fixed conflicts" ---   piti lini senc commit@ vor ereva incha arac vren -m (message)-na "message"
+git pull origin main --no-ff    ----  sudo-i nman syntax vor pull@ chlinelu depqum tuyl kta --no-ff sra ognuytamb qashes commitner@ 
+git checkout -f Linux esi jnjuma chenger@
+git add PHP ----  irar hakarak en ---  git reset PHP  
+git fetch   ---- uremn  pulli ujex dzevna hamel qashuma branch-er@ urish serveric
+isk stugelu hamar mtnum enq tvyal branch-@ nor tarmacnuma  
+git  stash  file_name  ----- pahoca gitum vor pahuma hin fayl@ popoxelu kam chenger@ het berelu hamar BAYC CHOGTAGORCVOX
+git rebase --- eli xuchuch comanda erku brancher miavorelu hamar kam commitner@ veradasavorelu hamar 
+git merge origin name_branch ---- ibr kpcnuma miancuma joina anum irar myus branchi chenger@
+
+                  
+
+
+
+
+
+
+
+
+
+
+
 
 
 

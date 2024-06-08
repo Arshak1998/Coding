@@ -1,17 +1,30 @@
  									
  								
  									
- 	ARSHAK STEPANYAN					 LINUX         COMANDSSS
+ 	ARSHAK STEPANYAN     29.05.24					   LINUX         COMANDSSS
  										 
- 										 
- 										 
+ 					
+	Ctrl + alt + t   = открывается Теминал 	
+ 	
+ 					 
+FAYL@ SARQEL@            touch name_file
+PAPKA SARQEL@ 		 mkdir
+
+FAYL@ JNJEL@             rm     
+PAPKA JNJEL@		 rm -r       sudo rm -r   
+
+  ---->
+					 
+									 
  									 
 (sudo) reboot	 перезагрузка система 	
 reboot -p 	 reboot -p или reboot --poweroff — завершает работу системы и выключает питание (аналогично команде poweroff).
 setxkbmap us    Язык ввода на англиском вручную
 setxkbmap ru    Язык ввода на русском вручную 
- 					
- 					
+code .        	bacuma textavoy file vs codov
+whoami		вашего текущего пользователя в системе
+cd /            вход карнего  		
+			
  									 
  					--------------------------------------------------------------------				 
  			
@@ -29,7 +42,6 @@ sudo apt update
 reboot
 
 
-
 					--------------------------------------------------------------------
 					
 					
@@ -39,11 +51,75 @@ reboot
 """"""""""""""""""""""""""""""""""""
 
 sudo chmod 777 folder
+chmod -R 777 ./    aysinqn ./ tvyal papken neraryal permission
 
+------------------------------
+
+chown -R asus:asus ./              ./ neraryal tvyal papken
+chmod -R 777 ./ 
+
+------------------------------
 
 					--------------------------------------------------------------------
 
+php artisan about 
+php artisan about --only=environment
 
+
+					--------------------------------------------------------------------
+							проверка ТОЧПАД 
+			
+			
+
+xinput disable 13    отключение 
+xinput enable 13     включение
+xinput --set-prop 14 "libinput Accel Speed" 0.6     чуствителность -1 до 1
+
+список подключенных устройств
+
+xinput list
+
+на мой убунту 
+
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ ETPS/2 Elantech Touchpad                	id=13	[slave  pointer  (2)]
+⎜   ↳ KYE SYSTEMS CORP. Wired Mouse           	id=14	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Power Button                            	id=6	[slave  keyboard (3)]
+    ↳ Sleep Button                            	id=10	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=12	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=8	[slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                        	id=11	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=9	[slave  keyboard (3)]
+    ↳ Asus Wireless Radio Control             	id=7	[slave  keyboard (3)]
+
+
+sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
+
+
+Section "InputClass"
+    Identifier "libinput touchpad catchall"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "NaturalScrolling" "true"
+EndSection
+
+
+					-------------------------------------------------------------------
+					--------------------------------------------------------------------
+
+						VVVVVVVVVVSSSSSSS     CODEEEEEEE
+						
+		ujjex  kod 				
+						
+	code --disable-extensions
+
+ 
+					-------------------------------------------------------------------
+					--------------------------------------------------------------------
 
 
 
