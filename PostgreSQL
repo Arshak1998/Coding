@@ -1,65 +1,11 @@
-apach polni sarqel stugel imanal
-
-php mtnel xoracac
 
 
 
-
-
-
-
-
-
-
-
-
-
-/ karnevo mtnel miangamic 
-
-				mtnel asus
-
-cd home/asus
-
-
-		durs gal asusis gnal urish tex
-		
-	hraman grel@   	ampayman cd-ov	
+	MySQL/MariaDB: 3306
 	
-	het gnal@ hatik hatik ../ ../ ../
+	PostgreSQL: 5432
 	
-cd ../     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	MongoDB: 27017
 
 
 
@@ -81,6 +27,12 @@ cd ../
 					Relation		ԿԱՊ
 					Permission		ԹՈՒՅԼԱՏՎՈՒԹՅՈՒՆ	
 								 
+									
+									
+			 hraman grel@   	ampayman cd-ov								
+  cd  /          	 karnevo mtnel miangamic 
+  cd home/asus  	 mtnel asus									
+  cd ../        	 het gnal@ hatik hatik 									
 									
 									------Оператор SELECT в SQL-----    ԸՆՏՐԵԼ
 
