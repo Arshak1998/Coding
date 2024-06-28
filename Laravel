@@ -31,7 +31,12 @@ COMPOSER INSTAL LARAVEL
 
 COMANDS   
 
-php artisan make:controller UserController     terminalov controller sareqlu kod
+ 
+
+php artisan make:controller ItemController --resource        terminalov controller sareqlu kod
+
+ 
+php artisan make:model Item -m                 terminalov model ira migracianerov sarqel@
 
 
 
